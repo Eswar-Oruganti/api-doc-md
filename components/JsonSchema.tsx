@@ -1,24 +1,29 @@
 import * as React from "react";
 
+type Entries<T> = {
+  [K in keyof T]: [K, T[K]];
+}[keyof T][];
+
 export function JsonSchema({ children }) {
   const obj = JSON.parse(children.props.children);
   const properties = obj.properties;
 
   return (
     <div className="jsonschema">
-      {Object.entries(properties).map((prop) => {
-        const [key, values] = prop;
-        return (
-          <div className="prop" key={key}>
-            <div className="schema-title">
-              <h6>{key}</h6>
-              <p>{values.type}</p>
-              {values.required && <p className="required">required</p>}
+      {(Object.entries(properties) as Entries<typeof properties>).map(
+        ([key, value]) => {
+          return (
+            <div className="prop" key={key}>
+              <div className="schema-title">
+                <h6>{key}</h6>
+                <p>{value.type}</p>
+                {value.required && <p className="required">required</p>}
+              </div>
+              <p>{value.description}</p>
             </div>
-            <p>{values.description}</p>
-          </div>
-        );
-      })}
+          );
+        }
+      )}
       <style jsx>{`
         .jsonschema {
           padding: 2px 10px;

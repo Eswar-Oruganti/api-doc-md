@@ -1,8 +1,11 @@
+type Entries<T> = {
+  [K in keyof T]: [K, T[K]];
+}[keyof T][];
 export const JsonList = ({ children }) => {
   const data = JSON.parse(children.props.children);
   return (
     <div className="list-container">
-      {Object.entries(data).map((item) => {
+      {(Object.entries(data) as Entries<typeof data>).map((item) => {
         return (
           <div className="request-header-list" key={item[0]}>
             <span className="header">{item[0]}</span>
