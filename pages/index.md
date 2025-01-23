@@ -1,44 +1,123 @@
 ---
-title: Get started with Markdoc
-description: How to get started with Markdoc
+title: GenerateSSOToken
 ---
 
-# Full Next.js example
+# {% $markdoc.frontmatter.title %}
+
+## Introduction
 
 {% callout %}
-This is a full-featured boilerplate for a creating a documentation website using Markdoc and Next.js.
+Purpose of this API is to generate the user token for single sign on (SSO) for ABC and linked LOBs for the User.
 {% /callout %}
 
-## Setup
+### Request Body
 
-First, clone this repo and install the dependencies required:
+{% jsonschema   %}
 
-```bash
-npm install
-# or
-yarn install
+```json
+{
+  "title": "Special Event",
+  "properties": {
+    "CIINo": {
+      "type": "text",
+      "required": "true",
+      "description": "The user's CIINo."
+    },
+    "LOBId": {
+      "type": "text",
+      "required": "true",
+      "description": "The ID of the line of business."
+    },
+    "Functionality": {
+      "type": "text",
+      "required": "true",
+      "description": "The functionality for which the SSO token is being generated"
+    }
+  }
+}
 ```
 
-Then, run the development server:
+{% /jsonschema %}
 
-```bash
-npm run dev
-# or
-yarn dev
+### Sample Request
+
+```json
+{
+  "CIINo": "10001XXX",
+  "LOBId": "XX",
+  "Functionality": "D"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Request Headers
 
-You can start editing the page by modifying `index.md`. The page auto-updates as you edit the file.
+{% jsonlist %}
 
-## Deploy
+```json
+{
+  "x-api-version": "1.0.0",
+  "x-lob-client-id": "1RrLMyLrZGA=",
+  "Content-Type": "application/json",
+  "Authorization": "eyJraWQiOiJLY2NMeklBY3RhY0R5TWxHVmFVTm52XC9xR3FlQjd2cnNwSWF3a0Z0M21ZND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIzbXUzOXZ1cTJhYmdyMmhkaDlsZGNxMzUyOSI"
+}
+```
 
-The quickest way to deploy your own version of this boilerplate is by deploying it with [Vercel](https://vercel.com) or [Netlify](https://www.netlify.com/) by clicking one of the buttons below.
+{% /jsonlist %}
 
-### Deploy with Vercel
+### Error Codes
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/markdoc/next.js-starter)
+{% customtable %}
 
-### Deploy to Netlify
+```json
+{
+  "headers": ["Sl. No", "Description", "Response Status Code"],
+  "rows": [
+    ["1", "Everything worked as expected.", "200 Success"],
+    [
+      "2",
+      "Getting the error if the incoming Cognito token has expired in the API.",
+      "401 Unauthorized"
+    ],
+    [
+      "3",
+      "Getting the error if the ‘Authorization’ field is not included in the headers of the API.",
+      "401 Unauthorized"
+    ],
+    [
+      "4",
+      "Getting the error if the entered Cognito token is incorrect / incorrect signature / mismatched issuer / blank in the API.",
+      "401 Unauthorized"
+    ],
+    [
+      "5",
+      "Getting the error if the token lacks the required permissions / correct credential configuration for specific APIs.",
+      "403 Forbidden"
+    ],
+    [
+      "6",
+      "Getting the error if the server is unable to provide the response (It may be IP restricted or the domain may be incorrect).",
+      "406 Not Acceptable"
+    ],
+    [
+      "7",
+      "Getting the error if the ‘x-lob-client-id’, ‘Content-Type’, ‘x-api-version’ field is not included in the header of the API.",
+      "400 Bad Request"
+    ],
+    ["8", "Internal Server Error", "502 Bad Gateway"],
+    ["9", "Timed out", "504 Gateway Timed Out"]
+  ]
+}
+```
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/markdoc/next.js-starter)
+{% /customtable %}
+
+### Sample Response
+
+```json
+{
+  "ReturnCode": "1",
+  "ReturnMessage": "Token Generated successfully",
+  "TokenRefNo": "173736XX8685878",
+  "TokenNo": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDSUlObyI6IjEwMDAxMDA0IiwiTE9CSWQiOiIwMSIsIkZ1bmN0aW9uYWxpdHkiOiJEIiwiRGF0ZSI6IjIwMjUtMDEtMjBUMDg6NDk6NDYuNzU2WiIsImlhdCI6MTczNzM2Mjk4NiwiZXhwIjoxNzM3MzY2NTg2fQ.19jRSvaXzRBo0CUFx-Fv20Sl_k"
+}
+```

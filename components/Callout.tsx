@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export function Callout({ title, children }) {
   return (
@@ -11,7 +11,7 @@ export function Callout({ title, children }) {
             display: flex;
             flex-direction: column;
             padding: 12px 16px;
-            background: #f6f9fc;
+            background: #fbfbfc;
             border: 1px solid #dce6e9;
             border-radius: 4px;
           }

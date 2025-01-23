@@ -9,6 +9,7 @@
     "@markdoc/markdoc": "latest",
     "@markdoc/next.js": "latest",
     "next": "latest",
+    "prism-themes": "^1.1.0",
     "prismjs": "latest",
     "react": "latest",
     "react-dom": "latest"
