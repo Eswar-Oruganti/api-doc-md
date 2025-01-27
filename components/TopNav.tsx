@@ -1,10 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import TopNavSelect from "./TopNavSelect";
 
 export function TopNav({ children }) {
   return (
     <nav>
-      {/* <section>{children}</section> */}
+      <div className="select">
+        <TopNavSelect />
+      </div>
       <style jsx>
         {`
           nav {
@@ -19,12 +22,18 @@ export function TopNav({ children }) {
             gap: 1rem;
             padding: 1rem 2rem;
             background: white;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #d4d4d4;
           }
           section {
             display: flex;
             gap: 1rem;
             padding: 0;
+          }
+
+          @media (min-width: 768px) {
+            .select {
+              display: none;
+            }
           }
         `}
       </style>

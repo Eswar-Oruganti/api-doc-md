@@ -75,19 +75,24 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       </TopNav>
       <SideNav />
 
-      <main>
+      <main className="main">
         <Component {...pageProps} />
       </main>
 
       <style jsx>
         {`
-          main {
+          .main {
             overflow: auto;
             margin-top: 56px;
             flex-grow: 1;
             font-size: 16px;
             padding: 0 2rem 2rem;
             margin-left: 260px;
+          }
+          @media (max-width: 768px) {
+            .main {
+              margin-left: 0 !important;
+            }
           }
         `}
       </style>

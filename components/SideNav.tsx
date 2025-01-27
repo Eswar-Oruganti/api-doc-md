@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import * as Collapsible from "@radix-ui/react-collapsible";
-import { ChevronRightIcon, ChevronDownIcon } from "@radix-ui/react-icons";
+import {
+  ChevronRightIcon,
+  ChevronDownIcon,
+  TriangleLeftIcon,
+  TriangleRightIcon,
+} from "@radix-ui/react-icons";
+import Link from "next/link";
 
 type Item =
   | {
@@ -104,6 +110,7 @@ const LeafLink = ({ link, title }: { link: string; title: string }) => {
           color: #585858;
           text-align: start;
           width: 100%;
+          cursor: pointer;
         }
 
         .active-leaf-link {
@@ -178,7 +185,11 @@ const Accordion = ({
 export function SideNav() {
   return (
     <aside className="sidebar">
-      <header className="sidebar-header"></header>
+      <header className="sidebar-header">
+        <Link href={"/"}>
+          <span className="banner">Api Doc</span>
+        </Link>
+      </header>
       {items.map((item) => (
         <div className="flex column" key={item.id}>
           {item.type === "route" ? (
@@ -199,13 +210,25 @@ export function SideNav() {
             top: 0;
             left: 0;
             height: 100svh;
-            border-right: 1px solid gray;
+            border-right: 1px solid #d4d4d4;
             background: white;
           }
 
           .sidebar-header {
             height: 56px;
-            padding: 8px 0;
+            padding: 16px 8px;
+            margin-bottom: 16px;
+          }
+
+          .banner {
+            font-size: 20px;
+            font-weight: bold;
+          }
+          @media (max-width: 768px) {
+            /* Hides the sidebar on tablet and mobile */
+            .sidebar {
+              display: none;
+            }
           }
         `}
       </style>
