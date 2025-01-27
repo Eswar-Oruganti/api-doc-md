@@ -9,7 +9,15 @@ import {
 } from "@radix-ui/react-icons";
 import styles from "./styles.module.css";
 
-const items = [
+interface Item {
+  id: number;
+  title: string;
+  link?: string;
+  type: "route" | "category";
+  children?: Item[]; // Optional for categories
+}
+
+const items: Item[] = [
   {
     id: 1,
     title: "Introduction",
@@ -34,16 +42,22 @@ const items = [
     type: "category",
     children: [
       {
+        id: 10, // Add id here
         title: "User Management",
         link: "/endpoints/user-management",
+        type: "route", // Add type here
       },
       {
+        id: 11, // Add id here
         title: "Data Retrieval",
         link: "/endpoints/data-retrieval",
+        type: "route", // Add type here
       },
       {
+        id: 12, // Add id here
         title: "Webhooks",
         link: "/endpoints/webhooks",
+        type: "route", // Add type here
       },
     ],
   },
@@ -53,12 +67,16 @@ const items = [
     type: "category",
     children: [
       {
+        id: 13, // Add id here
         title: "Error Handling",
         link: "/guides/error-handling",
+        type: "route", // Add type here
       },
       {
+        id: 14, // Add id here
         title: "Pagination",
         link: "/guides/pagination",
+        type: "route", // Add type here
       },
     ],
   },
@@ -74,7 +92,7 @@ const TopNavSelect = () => {
   const router = useRouter();
 
   // Function to handle navigation
-  const handleSelect = (value) => {
+  const handleSelect = (value: string) => {
     router.push(value);
   };
 
@@ -99,7 +117,7 @@ const TopNavSelect = () => {
               {items.map((item) =>
                 item.type === "route" ? (
                   // For individual routes
-                  <SelectItem key={item.id} value={item.link}>
+                  <SelectItem key={item.id} value={item.link!}>
                     {item.title}
                   </SelectItem>
                 ) : (
@@ -108,8 +126,8 @@ const TopNavSelect = () => {
                     <Select.Label className={styles.SelectLabel}>
                       {item.title}
                     </Select.Label>
-                    {item.children.map((child) => (
-                      <SelectItem key={child.link} value={child.link}>
+                    {item.children?.map((child) => (
+                      <SelectItem key={child.link!} value={child.link!}>
                         {child.title}
                       </SelectItem>
                     ))}
@@ -127,14 +145,21 @@ const TopNavSelect = () => {
   );
 };
 
-// Reusable SelectItem component
-const SelectItem = React.forwardRef(
-  ({ children, className, ...props }, forwardedRef) => {
+// Type for SelectItem props
+interface SelectItemProps {
+  children: React.ReactNode;
+  className?: string;
+  value: string;
+}
+
+const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
+  ({ children, className, value, ...props }, forwardedRef) => {
     return (
       <Select.Item
         className={classnames(styles.SelectItem, className)}
-        {...props}
-        ref={forwardedRef}>
+        value={value}
+        ref={forwardedRef}
+        {...props}>
         <Select.ItemText>{children}</Select.ItemText>
         <Select.ItemIndicator className={styles.SelectItemIndicator}>
           <CheckIcon />
