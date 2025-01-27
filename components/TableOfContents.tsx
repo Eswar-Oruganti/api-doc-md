@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
-export function TableOfContents({toc}) {
+export function TableOfContents({ toc }) {
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   );
@@ -16,20 +16,17 @@ export function TableOfContents({toc}) {
         {items.map((item) => {
           const href = `#${item.id}`;
           const active =
-            typeof window !== 'undefined' && window.location.hash === href;
+            typeof window !== "undefined" && window.location.hash === href;
           return (
             <li
               key={item.title}
               className={[
-                active ? 'active' : undefined,
-                item.level === 3 ? 'padded' : undefined,
+                active ? "active" : undefined,
+                item.level === 3 ? "padded" : undefined,
               ]
                 .filter(Boolean)
-                .join(' ')}
-            >
-              <Link href={href}>
-                {item.title}
-              </Link>
+                .join(" ")}>
+              <Link href={href}>{item.title}</Link>
             </li>
           );
         })}
@@ -54,13 +51,7 @@ export function TableOfContents({toc}) {
             list-style-type: none;
             margin: 0 0 1rem;
           }
-          li :global(a) {
-            text-decoration: none;
-          }
-          li :global(a:hover),
-          li.active :global(a) {
-            text-decoration: underline;
-          }
+
           li.padded {
             padding-left: 1rem;
           }

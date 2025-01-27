@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import { SideNav, TableOfContents, TopNav } from "../components";
+import { SideNav, TopNav } from "../components";
 
 import "prismjs";
 // Import other Prism themes here
@@ -73,27 +73,21 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       <TopNav>
         <Link href="/docs">Docs</Link>
       </TopNav>
-      <div className="page">
-        <SideNav />
-        <main className="flex column">
-          <Component {...pageProps} />
-        </main>
-      </div>
+      <SideNav />
+
+      <main>
+        <Component {...pageProps} />
+      </main>
+
       <style jsx>
         {`
-          .page {
-            position: fixed;
-            top: var(--top-nav-height);
-            display: flex;
-            width: 100vw;
-            flex-grow: 1;
-          }
           main {
             overflow: auto;
-            height: calc(100vh - var(--top-nav-height));
+            margin-top: 56px;
             flex-grow: 1;
             font-size: 16px;
             padding: 0 2rem 2rem;
+            margin-left: 260px;
           }
         `}
       </style>

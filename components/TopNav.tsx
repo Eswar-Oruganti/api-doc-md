@@ -4,17 +4,15 @@ import Link from "next/link";
 export function TopNav({ children }) {
   return (
     <nav>
-      <Link href="/" className="flex">
-        Home
-      </Link>
-      <section>{children}</section>
+      {/* <section>{children}</section> */}
       <style jsx>
         {`
           nav {
             top: 0;
             position: fixed;
             width: 100%;
-            z-index: 100;
+            height: 56px;
+            z-index: 10;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -22,9 +20,6 @@ export function TopNav({ children }) {
             padding: 1rem 2rem;
             background: white;
             border-bottom: 1px solid var(--border-color);
-          }
-          nav :global(a) {
-            text-decoration: none;
           }
           section {
             display: flex;
