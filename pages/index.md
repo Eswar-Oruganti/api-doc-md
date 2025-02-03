@@ -8,6 +8,7 @@ title: GenerateSSOToken
 
 {% callout %}
 Purpose of this API is to generate the user token for single sign on (SSO) for ABC and linked LOBs for the User.
+[test-link](https://url-here.org)
 {% /callout %}
 
 ### Request Body
