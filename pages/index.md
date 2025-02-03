@@ -11,6 +11,10 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
 [test-link](https://url-here.org)
 {% /callout %}
 
+{% customgrid %}
+{% block %}
+{% block %}
+
 ### Request Body
 
 {% jsonschema   %}
@@ -39,16 +43,25 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
 ```
 
 {% /jsonschema %}
+{% /block %}
+
+{% /block %}
+
+{% block %}
 
 ### Sample Request
 
-```json
+```js
 {
   "CIINo": "10001XXX",
   "LOBId": "XX",
   "Functionality": "D"
 }
 ```
+
+{% /block %}
+
+{% /customgrid %}
 
 ### Request Headers
 
