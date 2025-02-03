@@ -1,63 +1,54 @@
 export const CustomTable = ({ children }) => {
   const data = JSON.parse(children.props.children);
   const { headers, rows } = data;
+
   return (
-    <div>
+    <div className="table-container">
       <table className="table">
-        <thead className="table-head">
+        <thead>
           <tr>
-            {headers.map((header, index) => {
-              return (
-                <th className="table-cell" key={header + index}>
-                  {header}
-                </th>
-              );
-            })}
+            {headers.map((header, index) => (
+              <th key={index}>{header}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, index) => {
-            return (
-              <tr key={index}>
-                {row.map((item, index) => {
-                  return (
-                    <td className="table-cell" key={item + index}>
-                      {item}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
+          {rows.map((row, index) => (
+            <tr key={index}>
+              {row.map((item, idx) => (
+                <td key={idx}>{item}</td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
+
       <style jsx>{`
+        .table-container {
+          overflow: hidden;
+          border-radius: 12px; /* Rounded corners */
+          border: 1px solid #ccc; /* Outer border only */
+        }
+
         .table {
           width: 100%;
           border-collapse: collapse;
-          margin-top: 20px;
+        }
+
+        th,
+        td {
+          padding: 16px; /* Increased padding */
           text-align: left;
         }
 
-        .table-head {
+        thead {
           background-color: #f4f4f4;
         }
 
-        .table-cell {
-          padding: 12px 16px;
-          border: 1px solid #ccc;
-        }
-
-        .table th {
-          font-weight: bold;
-        }
-
-        .table tbody tr:nth-child(odd) {
-          background-color: #f9f9f9;
-        }
-
-        .table tbody tr:nth-child(even) {
-          background-color: #fff;
+        /* Remove inner borders */
+        th,
+        td {
+          border: none;
         }
       `}</style>
     </div>
