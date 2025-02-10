@@ -37,14 +37,14 @@ const items = [
   },
   {
     id: 2,
-    title: "Getting Started",
-    link: "/getting-started",
+    title: "Headers",
+    link: "/headers",
     type: "route",
   },
   {
     id: 3,
-    title: "Authentication",
-    link: "/authentication",
+    title: "Errors",
+    link: "/errors",
     type: "route",
   },
   {

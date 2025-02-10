@@ -1,10 +1,13 @@
-export const CustomTable = ({ children }) => {
+export const CustomTable = ({ children, primary }) => {
   const data = JSON.parse(children.props.children);
   const { headers, rows } = data;
 
+  // Find the column index of the primary header
+  const primaryIndex = headers.indexOf(primary);
+
   return (
     <div className="table-container">
-      <table className="table">
+      <table>
         <thead>
           <tr>
             {headers.map((header, index) => (
@@ -16,7 +19,11 @@ export const CustomTable = ({ children }) => {
           {rows.map((row, index) => (
             <tr key={index}>
               {row.map((item, idx) => (
-                <td key={idx}>{item}</td>
+                <td
+                  key={idx}
+                  className={idx === primaryIndex ? "highlight" : ""}>
+                  {item}
+                </td>
               ))}
             </tr>
           ))}
@@ -26,29 +33,45 @@ export const CustomTable = ({ children }) => {
       <style jsx>{`
         .table-container {
           overflow: hidden;
-          border-radius: 12px; /* Rounded corners */
-          border: 1px solid #ccc; /* Outer border only */
+          border-radius: 12px;
+          border: 1px solid rgb(216, 222, 228);
         }
 
-        .table {
+        table {
           width: 100%;
           border-collapse: collapse;
         }
 
         th,
         td {
-          padding: 16px; /* Increased padding */
+          padding: 8px 12px;
           text-align: left;
         }
 
         thead {
-          background-color: #f4f4f4;
+          background-color: #ebeef1;
+          border-bottom: 1px solid rgb(216, 222, 228);
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        tbody {
+          background-color: #f5f6f8;
+        }
+
+        td {
+          font-size: 14px;
         }
 
         /* Remove inner borders */
         th,
         td {
           border: none;
+        }
+
+        /* Highlight primary column */
+        .highlight {
+          font-weight: 600;
         }
       `}</style>
     </div>

@@ -7,9 +7,8 @@ import { SideNav, TopNav } from "../components";
 import "prismjs";
 // Import other Prism themes here
 import "prismjs/components/prism-bash.min";
-import "prism-themes/themes/prism-atom-dark.css";
+import "prism-themes/themes/prism-duotone-dark.css";
 import "../public/globals.css";
-
 import type { AppProps } from "next/app";
 import type { MarkdocNextJsPageProps } from "@markdoc/next.js";
 

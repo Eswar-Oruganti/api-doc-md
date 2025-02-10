@@ -1,6 +1,6 @@
-import { CustomGrid as Grid } from "../../components";
+import { Grid } from "../../components";
 
-export const customgrid = {
+export const grid = {
   render: Grid,
   children: ["paragraph", "tag", "list"],
   attributes: {

@@ -1,7 +1,9 @@
 /* Use this file to export your markdoc tags */
 export * from "./callout.markdoc";
-export * from "./jsonschema.markdoc";
-export * from "./customtable.markdoc";
+export * from "./parameters.markdoc";
 export * from "./jsonlist.markdoc";
-export * from "./customgrid.markdoc";
+export * from "./grid.markdoc";
 export * from "./block.markdoc";
+export * from "./response.markdoc";
+export * from "./apirequest.markdoc";
+export * from "./customtable.markdoc";
