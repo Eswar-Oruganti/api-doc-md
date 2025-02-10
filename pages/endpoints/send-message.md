@@ -1,6 +1,8 @@
-#### SendMessage
+### SendMessage
 
 This method is used to Send Message to WhatsApp through the GupShup API.
+
+&nbsp;
 
 {% grid %}
 
@@ -106,7 +108,7 @@ This method is used to Send Message to WhatsApp through the GupShup API.
 {% /apirequest %}
 {% /grid %}
 
-{% space %}
+{% space level=10 %}
 {% /space %}
 
 {% grid %}

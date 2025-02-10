@@ -1,6 +1,8 @@
-#### AuthUserValidateOTP
+### AuthUserValidateOTP
 
 This method will be using to Authenticate user OTP who is trying to login with the OTP.
+
+&nbsp;
 
 {% grid %}
 
@@ -71,7 +73,7 @@ This method will be using to Authenticate user OTP who is trying to login with t
 {% /apirequest %}
 {% /grid %}
 
-{% space %}
+{% space level=10 %}
 {% /space %}
 
 {% grid %}

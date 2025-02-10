@@ -1,4 +1,4 @@
-#### Request Headers
+### Request Headers
 
 Request headers are common for all API's
 

@@ -7,6 +7,7 @@ export const Grid = ({ children, columns = 2 }) => {
         .grid-container {
           display: grid;
           gap: 42px; /* Spacing between columns */
+          align-items: start;
         }
 
         .grid-cols-1 {

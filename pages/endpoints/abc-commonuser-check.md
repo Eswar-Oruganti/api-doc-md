@@ -1,9 +1,11 @@
-#### ABCCommonUserCheck
+### ABCCommonUserCheck
 
 Login journey-
 During the login process, consumer will pass the UserId along with other mandatory fields to this APIs. It will verify the userid into a common repository system.
 Registration journey -
 This method will be using to check whether the requested ABCUserID is already present in the login repository and have a access for OTP login .
+
+&nbsp;
 
 {% grid %}
 
@@ -51,7 +53,7 @@ This method will be using to check whether the requested ABCUserID is already pr
 
 {% /grid %}
 
-{% space %}
+{% space level=10 %}
 {% /space %}
 
 {% grid %}

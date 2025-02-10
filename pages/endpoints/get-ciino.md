@@ -1,4 +1,4 @@
-#### GetCIINo
+### GetCIINo
 
 This method is used to get the new CII for registration which is not available in ABC system.
 
@@ -15,7 +15,11 @@ This method is used to get the new CII for registration which is not available i
 {% /apirequest %}
 {% /grid %}
 
+{% space level=10 %}
+{% /space %}
+
 {% grid %}
+
 {% responseparameters %}
 
 ```json

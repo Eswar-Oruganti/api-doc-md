@@ -1,6 +1,8 @@
-#### UpdateContactDetails
+### UpdateContactDetails
 
 This method is used to updatecustomer’s contact details (Mobile number / Email Id) in ABC auth database.
+
+&nbsp;
 
 {% grid %}
 
@@ -57,7 +59,7 @@ This method is used to updatecustomer’s contact details (Mobile number / Email
 {% /apirequest %}
 {% /grid %}
 
-{% space %}
+{% space level=10 %}
 {% /space %}
 
 {% grid %}

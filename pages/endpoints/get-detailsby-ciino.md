@@ -1,6 +1,8 @@
-#### GetDetailsByCIINo
+### GetDetailsByCIINo
 
 This method is used to verify the ABC login Id created for LOB in ABC auth database.
+
+&nbsp;
 
 {% grid %}
 
@@ -36,7 +38,7 @@ This method is used to verify the ABC login Id created for LOB in ABC auth datab
 
 {% /grid %}
 
-{% space %}
+{% space level=10 %}
 {% /space %}
 
 {% grid %}

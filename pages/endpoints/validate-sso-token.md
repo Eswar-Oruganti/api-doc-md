@@ -1,6 +1,8 @@
-#### ValidateSSOToken
+### ValidateSSOToken
 
 The purpose of this API is to validate the user token with an active token for the LOB user.
+
+&nbsp;
 
 {% grid %}
 {% parameters %}
@@ -40,7 +42,7 @@ The purpose of this API is to validate the user token with an active token for t
 {% /apirequest %}
 {%/grid %}
 
-{% space %}
+{% space level=10 %}
 {% /space %}
 
 {%grid %}

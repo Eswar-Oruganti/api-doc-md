@@ -1,6 +1,8 @@
-#### UserLogout
+### UserLogout
 
 This method is used to logged out the user, And to update the Login status flag into ABC log database.
+
+&nbsp;
 
 {% grid %}
 
@@ -35,7 +37,7 @@ This method is used to logged out the user, And to update the Login status flag 
 {% /apirequest %}
 {% /grid %}
 
-{% space %}
+{% space level=10 %}
 {% /space %}
 
 {% grid %}
