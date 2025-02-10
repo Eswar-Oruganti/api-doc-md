@@ -11,3 +11,5 @@ export * from "./Grid";
 export * from "./Block";
 export * from "./Response";
 export * from "./ApiRequest";
+export * from "./ResponseParameters";
+export * from "./Space";

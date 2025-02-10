@@ -7,3 +7,5 @@ export * from "./block.markdoc";
 export * from "./response.markdoc";
 export * from "./apirequest.markdoc";
 export * from "./customtable.markdoc";
+export * from "./responseparameters.markdoc";
+export * from "./space.markdoc";

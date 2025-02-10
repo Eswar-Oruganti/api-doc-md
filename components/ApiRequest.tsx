@@ -1,15 +1,39 @@
 import { useRef, useState } from "react";
 import { CodeBlock } from "./CodeBlock";
 
+interface RequestData {
+  url: string;
+  headers: Record<string, string>;
+  body: Record<string, any>;
+}
+
+const templates = {
+  js: ({ url, body }) => `fetch("${url}", {
+  method: "POST",
+  body: ${JSON.stringify(body, null, 2)}
+});`,
+
+  curl: ({ url, body }) => `curl -X POST "${url}" \\
+  -d '${JSON.stringify(body, null, 2)}'`,
+
+  python: ({ url, body }) => `import requests
+
+url = "${url}"
+data = ${JSON.stringify(body, null, 2)}
+
+response = requests.post(url, json=data)`,
+};
+
 export function ApiRequest({ children }) {
-  const languages = children.map((item) => item.props["data-language"]);
+  const data = JSON.parse(children.props.children);
+  const languages = Object.keys(templates);
   const [activeLang, setActiveLang] = useState(languages[0]);
   const codeRef = useRef<{ getCode: () => string } | null>(null);
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
     if (codeRef.current) {
-      const code = codeRef.current.getCode();
+      const code = templates[activeLang as keyof typeof templates](data);
       navigator.clipboard.writeText(code).then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 1500); // Reset after 1.5s
@@ -19,7 +43,6 @@ export function ApiRequest({ children }) {
 
   return (
     <div className="api-request">
-      {/* Header with Title, Language Selector & Copy Button */}
       <div className="api-header">
         <span className="api-title">API REQUEST</span>
         <div className="header-controls">
@@ -39,18 +62,10 @@ export function ApiRequest({ children }) {
         </div>
       </div>
 
-      {/* Code Block - Show active language's code */}
       <div className="api-content">
-        {children.map((child) =>
-          child.props["data-language"] === activeLang ? (
-            <CodeBlock
-              key={child.props["data-language"]}
-              ref={codeRef}
-              data-language={activeLang}>
-              {child.props.children}
-            </CodeBlock>
-          ) : null
-        )}
+        <CodeBlock data-language={activeLang} ref={codeRef}>
+          {templates[activeLang as keyof typeof templates](data)}
+        </CodeBlock>
       </div>
 
       {/* Styles */}

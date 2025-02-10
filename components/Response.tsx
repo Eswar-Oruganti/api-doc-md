@@ -78,6 +78,7 @@ export function Response({ children }) {
           border: 1px solid rgb(216, 222, 228);
           border-radius: 8px;
           overflow: hidden;
+          background-color: #f5f6f8;
         }
 
         .response-title {
