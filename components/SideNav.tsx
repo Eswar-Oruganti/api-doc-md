@@ -53,39 +53,46 @@ const items = [
     type: "category",
     children: [
       {
-        title: "User Management",
-        link: "/endpoints/user-management",
+        title: "Get DetailsBy CIINo",
+        link: "/endpoints/get-detailsby-ciino",
       },
       {
-        title: "Data Retrieval",
-        link: "/endpoints/data-retrieval",
+        title: "Validate SSO Token",
+        link: "/endpoints/validate-sso-token",
       },
       {
-        title: "Webhooks",
-        link: "/endpoints/webhooks",
+        title: "Authenticate In ABC",
+        link: "/endpoints/authenticate-in-abc",
+      },
+      {
+        title: "ABC CommonUser Check",
+        link: "/endpoints/abc-commonuser-check",
+      },
+      {
+        title: "User Logout",
+        link: "/endpoints/user-logout",
+      },
+      {
+        title: "Auth User Validate OTP",
+        link: "/endpoints/auth-user-validate-otp",
+      },
+      {
+        title: "Get CIINo",
+        link: "/endpoints/get-ciino",
+      },
+      {
+        title: "Forgot UserName",
+        link: "/endpoints/forgot-username",
+      },
+      {
+        title: "Update ContactDetails",
+        link: "/endpoints/update-contactdetails",
+      },
+      {
+        title: "Send Message",
+        link: "/endpoints/send-message",
       },
     ],
-  },
-  {
-    id: 5,
-    title: "Guides",
-    type: "category",
-    children: [
-      {
-        title: "Error Handling",
-        link: "/guides/error-handling",
-      },
-      {
-        title: "Pagination",
-        link: "/guides/pagination",
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: "FAQs",
-    link: "/faqs",
-    type: "route",
   },
 ];
 
