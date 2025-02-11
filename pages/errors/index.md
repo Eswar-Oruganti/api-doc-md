@@ -23,3 +23,9 @@
 ```
 
 {% /customtable %}
+
+{% /grid %}
+
+{% space %}
+
+{% /space %}
