@@ -90,6 +90,7 @@ const styles = `
   .jsonschema p, h2, h6 { margin: 0; }
 
   .schema-heading {
+  padding-bottom :16px;
     margin: 24px 0;
     font-size: 16px;
     font-weight: 600;
@@ -126,10 +127,7 @@ const styles = `
     font-size: 14px;
   }
 
-  .collapsible {
-    margin-top: 16px;
-  }
-
+ 
   .collapsible-trigger {
     display: flex;
     align-items: center;

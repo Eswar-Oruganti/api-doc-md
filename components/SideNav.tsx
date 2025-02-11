@@ -109,20 +109,21 @@ const LeafLink = ({ link, title }: { link: string; title: string }) => {
       <style jsx>{`
         .leaf-link {
           font-size: 14px;
+          font-weight: 500;
           padding: 6px 8px;
           border-radius: 4px;
           border: 0;
           outline: 0;
           background: transparent;
-          color: #585858;
+          color: rgb(89, 97, 113);
           text-align: start;
           width: 100%;
           cursor: pointer;
         }
 
         .active-leaf-link {
-          color: #cb1d31 !important;
-          background: #fae8ea;
+          color: #5469d4 !important;
+          background: #f0eeff;
         }
       `}</style>
     </button>
@@ -166,13 +167,14 @@ const Accordion = ({
       </Collapsible.Content>
       <style jsx>{`
         .collapsible {
+          margin: 0;
         }
 
         .trigger {
           cursor: pointer;
           font-weight: 500;
           font-size: 14px;
-          color: #585858;
+          color: rgb(89, 97, 113);
           padding: 6px 8px;
           display: flex;
           align-items: center;
@@ -183,6 +185,7 @@ const Accordion = ({
           padding-left: 10px;
           display: flex;
           flex-direction: column;
+          row-gap: 4px;
         }
       `}</style>
     </Collapsible.Root>
@@ -197,15 +200,17 @@ export function SideNav() {
           <span className="banner">Api Doc</span>
         </Link>
       </header>
-      {items.map((item) => (
-        <div className="flex column" key={item.id}>
-          {item.type === "route" ? (
-            <LeafLink link={item.link} title={item.title} />
-          ) : (
-            <Accordion title={item.title} children={item.children} />
-          )}
-        </div>
-      ))}
+      <div className="links-container">
+        {items.map((item) => (
+          <div className="flex column" key={item.id}>
+            {item.type === "route" ? (
+              <LeafLink link={item.link} title={item.title} />
+            ) : (
+              <Accordion title={item.title} children={item.children} />
+            )}
+          </div>
+        ))}
+      </div>
       <style jsx>
         {`
           .sidebar {
@@ -225,6 +230,12 @@ export function SideNav() {
             height: 56px;
             padding: 16px 8px;
             margin-bottom: 16px;
+          }
+
+          .links-container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 4px;
           }
 
           .banner {

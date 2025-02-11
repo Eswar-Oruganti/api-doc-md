@@ -17,7 +17,7 @@ interface Item {
   children?: Item[]; // Optional for categories
 }
 
-const items: Item[] = [
+const items = [
   {
     id: 1,
     title: "Introduction",
@@ -26,14 +26,14 @@ const items: Item[] = [
   },
   {
     id: 2,
-    title: "Getting Started",
-    link: "/getting-started",
+    title: "Headers",
+    link: "/headers",
     type: "route",
   },
   {
     id: 3,
-    title: "Authentication",
-    link: "/authentication",
+    title: "Errors",
+    link: "/errors",
     type: "route",
   },
   {
@@ -42,49 +42,46 @@ const items: Item[] = [
     type: "category",
     children: [
       {
-        id: 10, // Add id here
-        title: "User Management",
-        link: "/endpoints/user-management",
-        type: "route", // Add type here
+        title: "Get DetailsBy CIINo",
+        link: "/endpoints/get-detailsby-ciino",
       },
       {
-        id: 11, // Add id here
-        title: "Data Retrieval",
-        link: "/endpoints/data-retrieval",
-        type: "route", // Add type here
+        title: "Validate SSO Token",
+        link: "/endpoints/validate-sso-token",
       },
       {
-        id: 12, // Add id here
-        title: "Webhooks",
-        link: "/endpoints/webhooks",
-        type: "route", // Add type here
+        title: "Authenticate In ABC",
+        link: "/endpoints/authenticate-in-abc",
+      },
+      {
+        title: "ABC CommonUser Check",
+        link: "/endpoints/abc-commonuser-check",
+      },
+      {
+        title: "User Logout",
+        link: "/endpoints/user-logout",
+      },
+      {
+        title: "Auth User Validate OTP",
+        link: "/endpoints/auth-user-validate-otp",
+      },
+      {
+        title: "Get CIINo",
+        link: "/endpoints/get-ciino",
+      },
+      {
+        title: "Forgot UserName",
+        link: "/endpoints/forgot-username",
+      },
+      {
+        title: "Update ContactDetails",
+        link: "/endpoints/update-contactdetails",
+      },
+      {
+        title: "Send Message",
+        link: "/endpoints/send-message",
       },
     ],
-  },
-  {
-    id: 5,
-    title: "Guides",
-    type: "category",
-    children: [
-      {
-        id: 13, // Add id here
-        title: "Error Handling",
-        link: "/guides/error-handling",
-        type: "route", // Add type here
-      },
-      {
-        id: 14, // Add id here
-        title: "Pagination",
-        link: "/guides/pagination",
-        type: "route", // Add type here
-      },
-    ],
-  },
-  {
-    id: 7,
-    title: "FAQs",
-    link: "/faqs",
-    type: "route",
   },
 ];
 

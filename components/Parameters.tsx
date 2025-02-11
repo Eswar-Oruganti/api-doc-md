@@ -120,9 +120,7 @@ const styles = `
     font-size: 14px;
   }
 
-  .collapsible {
-    margin-top: 16px;
-  }
+  
 
   .collapsible-trigger {
     display: flex;

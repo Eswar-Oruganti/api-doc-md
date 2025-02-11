@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { CodeBlock } from "./CodeBlock";
+import { CheckCircledIcon, CopyIcon } from "@radix-ui/react-icons"; // Import icons
 
 interface RequestData {
   url: string;
@@ -8,15 +9,15 @@ interface RequestData {
 }
 
 const templates = {
-  js: ({ url, body }) => `fetch("${url}", {
+  js: ({ url, body }: RequestData) => `fetch("${url}", {
   method: "POST",
   body: ${JSON.stringify(body, null, 2)}
 });`,
 
-  curl: ({ url, body }) => `curl -X POST "${url}" \\
+  curl: ({ url, body }: RequestData) => `curl -X POST "${url}" \\
   -d '${JSON.stringify(body, null, 2)}'`,
 
-  python: ({ url, body }) => `import requests
+  python: ({ url, body }: RequestData) => `import requests
 
 url = "${url}"
 data = ${JSON.stringify(body, null, 2)}
@@ -28,17 +29,14 @@ export function ApiRequest({ children }) {
   const data = JSON.parse(children.props.children);
   const languages = Object.keys(templates);
   const [activeLang, setActiveLang] = useState(languages[0]);
-  const codeRef = useRef<{ getCode: () => string } | null>(null);
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
-    if (codeRef.current) {
-      const code = templates[activeLang as keyof typeof templates](data);
-      navigator.clipboard.writeText(code).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500); // Reset after 1.5s
-      });
-    }
+    const code = templates[activeLang as keyof typeof templates](data);
+    navigator.clipboard.writeText(code).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
   };
 
   return (
@@ -51,24 +49,27 @@ export function ApiRequest({ children }) {
             value={activeLang}
             onChange={(e) => setActiveLang(e.target.value)}>
             {languages.map((lang) => (
-              <option key={lang} value={lang} className="select-option">
+              <option key={lang} value={lang}>
                 {lang.toUpperCase()}
               </option>
             ))}
           </select>
           <button className="copy-btn" onClick={copyToClipboard}>
-            {copied ? "Copied!" : "Copy"}
+            {copied ? (
+              <CheckCircledIcon width={16} height={16} />
+            ) : (
+              <CopyIcon width={16} height={16} />
+            )}
           </button>
         </div>
       </div>
 
       <div className="api-content">
-        <CodeBlock data-language={activeLang} ref={codeRef}>
+        <CodeBlock data-language={activeLang}>
           {templates[activeLang as keyof typeof templates](data)}
         </CodeBlock>
       </div>
 
-      {/* Styles */}
       <style jsx>{`
         .api-request {
           font-family: monospace;
@@ -94,6 +95,7 @@ export function ApiRequest({ children }) {
         .header-controls {
           display: flex;
           gap: 8px;
+          align-items: center;
         }
 
         .api-title {
@@ -112,18 +114,17 @@ export function ApiRequest({ children }) {
         }
 
         .copy-btn {
-          padding: 4px 8px;
+          padding: 4px;
           font-size: 12px;
-          background: ${copied ? "#28a745" : "#007bff"};
-          color: white;
+          background: transparent;
           border: none;
-          border-radius: 4px;
+          color: #007bff;
           cursor: pointer;
-          transition: background 0.2s;
+          transition: color 0.2s;
         }
 
         .copy-btn:hover {
-          background: ${copied ? "#218838" : "#0056b3"};
+          color: #0056b3;
         }
 
         .api-content {
