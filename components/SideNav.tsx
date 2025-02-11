@@ -8,6 +8,7 @@ import {
   TriangleRightIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 type Item =
   | {
@@ -212,9 +213,10 @@ export function SideNav() {
   return (
     <aside className="sidebar">
       <header className="sidebar-header">
-        <Link href={"/"}>
-          <span className="banner">Api Doc</span>
+        <Link href={"/"} className="banner-link">
+          <span className="banner">ABC </span> <span>Doc</span>
         </Link>
+        <ThemeSwitcher />
       </header>
       <div className="links-container">
         {items.map((item) => (
@@ -246,6 +248,9 @@ export function SideNav() {
             height: 56px;
             padding: 16px 8px;
             margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
 
           .links-container {
@@ -253,10 +258,14 @@ export function SideNav() {
             flex-direction: column;
             row-gap: 4px;
           }
-
+          .banner-link {
+            text-decoration: none;
+            color: var(--text-color-primary);
+          }
           .banner {
             font-size: 20px;
             font-weight: bold;
+            color: var(--text-color-active);
           }
           @media (max-width: 768px) {
             /* Hides the sidebar on tablet and mobile */

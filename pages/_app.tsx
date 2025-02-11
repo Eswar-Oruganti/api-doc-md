@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { ThemeProvider } from "next-themes";
 
 import { SideNav, TopNav } from "../components";
 
@@ -12,8 +13,8 @@ import "../public/globals.css";
 import type { AppProps } from "next/app";
 import type { MarkdocNextJsPageProps } from "@markdoc/next.js";
 
-const TITLE = "Markdoc";
-const DESCRIPTION = "A powerful, flexible, Markdown-based authoring framework";
+const TITLE = "ABC Docs";
+const DESCRIPTION = "Documentation of APIs";
 
 function collectHeadings(node, sections = []) {
   if (node) {
@@ -69,14 +70,21 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TopNav>
-        <Link href="/docs">Docs</Link>
-      </TopNav>
-      <SideNav />
+      <ThemeProvider
+        themes={["light", "dark"]}
+        enableSystem={false}
+        defaultTheme="dark">
+        <>
+          <TopNav>
+            <Link href="/docs">Docs</Link>
+          </TopNav>
+          <SideNav />
 
-      <main className="main">
-        <Component {...pageProps} />
-      </main>
+          <main className="main">
+            <Component {...pageProps} />
+          </main>
+        </>
+      </ThemeProvider>
 
       <style jsx>
         {`
