@@ -34,7 +34,7 @@ This method is used to map one LOB with Another LOB. This mapping will be store 
   "url": "https://api.adityabirlacapital.com/cmnsrv/user/master/map-lob-product",
   "method": "POST",
   "body": {
-    "CIINo": "11077003",
+    "CIINo": "{{ciino}}",
     "LOBId": "02"
   }
 }

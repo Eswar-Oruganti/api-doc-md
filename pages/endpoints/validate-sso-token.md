@@ -33,8 +33,10 @@ The purpose of this API is to validate the user token with an active token for t
   "url": "https://api.adityabirlacapital.com/cmnsrv/auth/user/validate-sso-token",
   "method": "POST",
   "body": {
-    "TokenRefNo": "1738998802812891",
-    "TokenNo": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDSUlObyI6IjExMDc4OTgxIiwiTE9CSWQiOiIwMSIsIkZ1bmN0aW9uYWxpdHkiOiJEIiwiRGF0ZSI6IjIwMjUtMDItMDhUMDc6MTM6MjIuODEwWiIsImlhdCI6MTczODk5ODgwMiwiZXhwIjoxNzM4OTk5NzAyfQ.o_jkn6zsjez0Q1V7fNWJPtK_CYOR_OBzODtoY8w78No"
+    "ValidateTokenRequest": {
+      "TokenRefNo": "1738998802812891",
+      "TokenNo": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJDSUlObyI6IjExMDc4OTgxIiwiTE9CSWQiOiIwMSIsIkZ1bmN0aW9uYWxpdHkiOiJEIiwiRGF0ZSI6IjIwMjUtMDItMDhUMDc6MTM6MjIuODEwWiIsImlhdCI6MTczODk5ODgwMiwiZXhwIjoxNzM4OTk5NzAyfQ.o_jkn6zsjez0Q1V7fNWJPtK_CYOR_OBzODtoY8w78No"
+    }
   }
 }
 ```

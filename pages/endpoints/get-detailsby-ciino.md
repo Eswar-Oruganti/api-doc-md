@@ -29,7 +29,9 @@ This method is used to verify the ABC login Id created for LOB in ABC auth datab
   "url": "https://api.adityabirlacapital.com/cmnsrv/abc/get-cii-details",
   "method": "POST",
   "body": {
-    "CIINo": "10203696"
+    "en_Request": {
+      "CIINo": "10203696"
+    }
   }
 }
 ```
@@ -102,14 +104,14 @@ This method is used to verify the ABC login Id created for LOB in ABC auth datab
 {% response %}
 {
 "ReturnCode": "1",
-"ReturnMessage": "Record retrived successfully",
-"MobileNo": "9930315628",
-"EmailId": "PramodKumar.Yadav@adityabirlacapital.commm",
+"ReturnMessage": "Record retrieved successfully",
+"MobileNo": "{{MOBILE_NUMBER}}",
+"EmailId": "{{EMAIL_ID}}",
 "LastLoginDateTime": null,
-"UserName": "cmg@indv",
-"CustomerName": "Shashikant vishwakarma",
-"CustomerShortName": "AB",
-"LobName": "MF",
+"UserName": "{{USERNAME}}",
+"CustomerName": "{{CUSTOMER_NAME}}",
+"CustomerShortName": "{{CUSTOMER_SHORT_NAME}}",
+"LobName": "{{LOB_NAME}}",
 "linkedLobs": [
 {
 "LOBName": "MF",

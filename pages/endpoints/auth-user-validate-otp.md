@@ -60,12 +60,14 @@ This method will be using to Authenticate user OTP who is trying to login with t
   "url": "https://api.adityabirlacapital.com/cmnsrv/auth/user/validate-otp",
   "method": "POST",
   "body": {
-    "ABCUserID": "userniki7",
-    "EmailID": "PramodKumar.Yadav@adityabirlacapital.com",
-    "MobileNumber": "9930315629",
-    "Functionality": "OTP_LGN",
-    "OTP": "123456",
-    "Source": "ESBUATABCTest"
+    "objRequest": {
+      "ABCUserID": "{{userid}}",
+      "EmailID": "{{email}}",
+      "MobileNumber": "{{mobile}}",
+      "Functionality": "OTP_LGN",
+      "OTP": "123456",
+      "Source": "ESBUATABCTest"
+    }
   }
 }
 ```
@@ -85,12 +87,12 @@ This method will be using to Authenticate user OTP who is trying to login with t
   "ReturnMessage": "User authenticated successfully.",
   "ReturnCode": "1",
   "CIINumber": "10332332",
-  "CustomerName": "TestDev",
+  "CustomerName": "{{customername}}",
   "CustomerShortName": "T",
-  "EmailId": "TestDev@gmail.com",
+  "EmailId": "{{email}}",
   "LOBName": "FL",
   "LastLoginDateTime": "2025-02-07T08:23:17.223Z",
-  "MobileNo": "9994767653",
+  "MobileNo": "{{mobile}}",
   "BundlePurchaseFlag": "N",
   "linkedLobs": [
     {

@@ -14,6 +14,7 @@ Request headers are common for all API's
     ["Authorization", "token for authentication"],
     ["Content-Type", "JSON"],
     ["x-lob-client-id", "Identifier for the LOB or client"],
+    ["x-correlation-id", "Unique Identifier Value"],
     ["API Key", "Key for API access"]
   ]
 }

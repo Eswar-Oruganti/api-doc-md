@@ -42,9 +42,11 @@ This method will be using to check whether the requested ABCUserID is already pr
   "url": "https://api.adityabirlacapital.com/cmnsrv/user/validate/abc-common-user",
   "method": "POST",
   "body": {
-    "ABCUserID": "SanGreenmen",
-    "LOB": "FL",
-    "Functionality": "OTP_LGN"
+    "objRequest": {
+      "ABCUserID": "{{UserID}}",
+      "LOB": "FL",
+      "Functionality": "OTP_LGN"
+    }
   }
 }
 ```

@@ -90,17 +90,19 @@ This method is used to Send Message to WhatsApp through the GupShup API.
   "url": "https://api.adityabirlacapital.com/cmnsrv/abc-micro/send-message",
   "method": "POST",
   "body": {
-    "Method": "SendMessage",
-    "Message": "Thank you for choosing Aditya Birla Sun Life Insurance. We have received your application abc1 for processing.You can now track the status of your Application abc1 on xyz1",
-    "MsgType": "Text",
-    "MsgToBeSentVia": "1",
-    "MobileNumber": "9994767653",
-    "ClientIPAddress": "1.0.0.1",
-    "SMSUserId": "2000180532",
-    "SMSPassword": "LVEXe1olksw=",
-    "GupShupUserId": "2000181681",
-    "GupShupPassword": "28c7M4",
-    "LobId": "20"
+    "reqSendMessage": {
+      "Method": "SendMessage",
+      "Message": "Thank you for choosing Aditya Birla Sun Life Insurance. We have received your application abc1 for processing.You can now track the status of your Application abc1 on xyz1",
+      "MsgType": "Text",
+      "MsgToBeSentVia": "1",
+      "MobileNumber": "{{mobile}}",
+      "ClientIPAddress": "1.0.0.1",
+      "SMSUserId": "{{userid}}",
+      "SMSPassword": "{{password}}",
+      "GupShupUserId": "{{gupshupuserid}}",
+      "GupShupPassword": "{{gupshuppassword}}",
+      "LobId": "20"
+    }
   }
 }
 ```
@@ -125,7 +127,7 @@ This method is used to Send Message to WhatsApp through the GupShup API.
     "ReturnMessage": {
       "type": "Varchar(MAX)",
       "required": "M",
-      "description": "success | 919994767653 | 5364973993480663255-554363070986075088\n"
+      "description": "success | {{mobile}} | 5364973993480663255-554363070986075088\n"
     }
   }
 }
@@ -136,7 +138,7 @@ This method is used to Send Message to WhatsApp through the GupShup API.
 
 ```json
 {
-  "ReturnCode": "success | 919994767653 | 5364568525174681646-68059411000873634\n",
+  "ReturnCode": "success | {{mobile}} | 5364568525174681646-68059411000873634\n",
   "ReturnMessage": "1"
 }
 ```

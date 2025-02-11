@@ -33,8 +33,10 @@ This method is used to validate the login Id & Password in ABC auth database.
   "url": "https://api.adityabirlacapital.com/cmnsrv/auth/validate/abc",
   "method": "POST",
   "body": {
-    "ABCUserName": "userniki7",
-    "ABCPassword": "QeOI0+/9xlMSX+8w9sTb8Q=="
+    "en_AuthenticateRequest": {
+      "ABCUserName": "{{ABCUsername}}",
+      "ABCPassword": "{{Password}}"
+    }
   }
 }
 ```
@@ -119,7 +121,7 @@ This method is used to validate the login Id & Password in ABC auth database.
   "CIINumber": "11076117",
   "CustomerName": "AB",
   "CustomerShortName": "A",
-  "EmailId": "lzjbkjdf@gmail.com",
+  "EmailId": "{{EMAILID}}",
   "LOBName": "MF",
   "LastLoginDateTime": "Feb  6 2025 12:18PM",
   "MobileNo": "7777777777",

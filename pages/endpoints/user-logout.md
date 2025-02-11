@@ -29,7 +29,9 @@ This method is used to logged out the user, And to update the Login status flag 
   "url": "https://api.adityabirlacapital.com/cmnsrv/auth/user/logout",
   "method": "POST",
   "body": {
-    "UserName": "vipul.pqr"
+    "Request": {
+      "UserName": "{{username}}"
+    }
   }
 }
 ```

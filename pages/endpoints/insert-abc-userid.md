@@ -50,7 +50,7 @@ This method will be using to insert new login id(OneID/Lob login id) into common
   "url": "https://api.adityabirlacapital.com/cmnsrv/abc/insert-abc-userid",
   "method": "POST",
   "body": {
-    "ABCUserID": "SanGreenmen",
+    "ABCUserID": "{{abcuserid}}",
     "LOB": "FL",
     "UserType": "I",
     "LobRegisteredDate": null,

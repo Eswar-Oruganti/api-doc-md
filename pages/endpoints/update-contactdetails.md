@@ -48,10 +48,12 @@ This method is used to updatecustomer’s contact details (Mobile number / Email
   "url": "https://api.adityabirlacapital.com/cmnsrv/abc/update-contact",
   "method": "POST",
   "body": {
-    "CIINo": "10001022",
-    "EmailId": "a@2.com",
-    "MobileNo": "9090123456",
-    "LobNames": "BSLI&R&000192508"
+    "_UpdateContactDetailRequest": {
+      "CIINo": "10001022",
+      "EmailId": "{{email}}",
+      "MobileNo": "{{mobile}}",
+      "LobNames": "BSLI&R&000192508"
+    }
   }
 }
 ```

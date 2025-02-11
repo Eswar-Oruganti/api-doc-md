@@ -40,9 +40,11 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
   "url": "https://api.adityabirlacapital.com/cmnsrv/user/generate-sso-token",
   "method": "POST",
   "body": {
-    "CIINo": "11078981",
-    "LOBId": "01",
-    "Functionality": "D"
+    "GenerateTokenRequest": {
+      "CIINo": "{{ciino}}",
+      "LOBId": "01",
+      "Functionality": "D"
+    }
   }
 }
 ```
@@ -102,7 +104,7 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
 {
   "ReturnCode": "1",
   "ReturnMessage": "Record retrieved Successfully",
-  "LoginId": "hfcuser006",
+  "LoginId": "{{loginid}}",
   "UDP": ""
 }
 ```
