@@ -28,7 +28,7 @@ type Item =
       link?: undefined;
     };
 
-const items = [
+export const items = [
   {
     id: 1,
     title: "Introduction",
@@ -91,6 +91,18 @@ const items = [
       {
         title: "Send Message",
         link: "/endpoints/send-message",
+      },
+      {
+        title: "Generate SSO Token",
+        link: "/endpoints/generate-sso-token",
+      },
+      {
+        title: "Insert ABC UserID",
+        link: "/endpoints/insert-abc-userid",
+      },
+      {
+        title: "Map LOB Product",
+        link: "/endpoints/map-lob-product",
       },
     ],
   },

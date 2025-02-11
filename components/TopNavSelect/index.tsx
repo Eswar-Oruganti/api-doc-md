@@ -7,6 +7,7 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@radix-ui/react-icons";
+import { items } from "../SideNav";
 import styles from "./styles.module.css";
 
 interface Item {
@@ -16,74 +17,6 @@ interface Item {
   type: "route" | "category";
   children?: Item[]; // Optional for categories
 }
-
-const items = [
-  {
-    id: 1,
-    title: "Introduction",
-    link: "/introduction",
-    type: "route",
-  },
-  {
-    id: 2,
-    title: "Headers",
-    link: "/headers",
-    type: "route",
-  },
-  {
-    id: 3,
-    title: "Errors",
-    link: "/errors",
-    type: "route",
-  },
-  {
-    id: 4,
-    title: "Endpoints",
-    type: "category",
-    children: [
-      {
-        title: "Get DetailsBy CIINo",
-        link: "/endpoints/get-detailsby-ciino",
-      },
-      {
-        title: "Validate SSO Token",
-        link: "/endpoints/validate-sso-token",
-      },
-      {
-        title: "Authenticate In ABC",
-        link: "/endpoints/authenticate-in-abc",
-      },
-      {
-        title: "ABC CommonUser Check",
-        link: "/endpoints/abc-commonuser-check",
-      },
-      {
-        title: "User Logout",
-        link: "/endpoints/user-logout",
-      },
-      {
-        title: "Auth User Validate OTP",
-        link: "/endpoints/auth-user-validate-otp",
-      },
-      {
-        title: "Get CIINo",
-        link: "/endpoints/get-ciino",
-      },
-      {
-        title: "Forgot UserName",
-        link: "/endpoints/forgot-username",
-      },
-      {
-        title: "Update ContactDetails",
-        link: "/endpoints/update-contactdetails",
-      },
-      {
-        title: "Send Message",
-        link: "/endpoints/send-message",
-      },
-    ],
-  },
-];
 
 const TopNavSelect = () => {
   const router = useRouter();
