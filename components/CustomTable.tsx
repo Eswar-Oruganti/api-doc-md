@@ -34,7 +34,7 @@ export const CustomTable = ({ children, primary }) => {
         .table-container {
           overflow: hidden;
           border-radius: 12px;
-          border: 1px solid rgb(216, 222, 228);
+          border: 1px solid var(--border-color-primary);
         }
 
         table {
@@ -49,14 +49,14 @@ export const CustomTable = ({ children, primary }) => {
         }
 
         thead {
-          background-color: #ebeef1;
-          border-bottom: 1px solid rgb(216, 222, 228);
+          background-color: var(--background-level2);
+          border-bottom: 1px solid var(--border-color-primary);
           font-size: 12px;
           font-weight: 600;
         }
 
         tbody {
-          background-color: #f5f6f8;
+          background-color: var(--background-level1);
         }
 
         td {

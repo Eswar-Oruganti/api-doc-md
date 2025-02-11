@@ -75,10 +75,10 @@ export function Response({ children }) {
           font-size: 14px;
           font-family: monospace;
           max-width: 100%;
-          border: 1px solid rgb(216, 222, 228);
+          border: 1px solid var(--border-color-primary);
           border-radius: 8px;
           overflow: hidden;
-          background-color: #f5f6f8;
+          background-color: var(--background-level1);
         }
 
         .response-title {
@@ -86,8 +86,8 @@ export function Response({ children }) {
           font-size: 12px;
           font-weight: 600;
           padding: 8px 12px;
-          background: #ebeef1;
-          border-bottom: 1px solid rgb(216, 222, 228);
+          background: var(--background-level2);
+          border-bottom: 1px solid var(--border-color-primary);
         }
 
         .response-content {

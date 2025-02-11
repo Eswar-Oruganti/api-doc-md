@@ -2,6 +2,17 @@
 @import "@radix-ui/colors/mauve.css";
 @import "@radix-ui/colors/violet.css";
 
+:root {
+  --background-page: #14171d;
+  --background-level1: #1b1e25;
+  --background-level2: #21252c;
+  --text-color-primary: rgb(201, 206, 216);
+  --text-color-secondary: rgb(140, 153, 173);
+  --text-color-active: #5469d4;
+  --border-color-primary: #2b3039;
+  --background-active: #1c1d34;
+}
+
 *,
 *::before,
 *::after {
@@ -14,6 +25,8 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: rgba(60, 66, 87, 1);
   margin: 0;
+  background-color: var(--background-page);
+  color: var(--text-color-primary);
 }
 
 p {

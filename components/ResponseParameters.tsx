@@ -29,7 +29,6 @@ export function ResponseParameters({ children }) {
       {Object.entries(properties).map(([key, value]) => (
         <ResponseAttribute key={key} name={key} schema={value} />
       ))}
-      <style jsx>{styles}</style>
     </div>
   );
 }
@@ -85,71 +84,3 @@ function ResponseAttribute({
     </div>
   );
 }
-
-const styles = `
-  .jsonschema p, h2, h6 { margin: 0; }
-
-  .schema-heading {
-  padding-bottom :16px;
-    margin: 24px 0;
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-  .attribute {
-    padding: 10px 0;
-    border-top: 1px solid #D8DEE4;
-  }
-
-  .schema-title {
-    display: flex;
-    column-gap: 8px;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-
-  .attribute-name {
-    font-size: 14px;
-    font-weight: 700;
-  }
-
-  .attribute-type {
-    font-size: 12px;
-    color: rgb(89, 97, 113);
-  }
-  .attribute-required {
-    font-size: 12px;
-    font-weight: 600;
-    color: rgb(177, 54, 0);
-  }
-
-  .attribute-description {
-    font-size: 14px;
-  }
-
- 
-  .collapsible-trigger {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #596171;
-    cursor: pointer;
-    background: none;
-    border: 1px solid #D8DEE4;
-    border-radius: 8px;
-    padding: 6px 8px;
-  }
-  .chevron {
-    transition: transform 0.2s ease-in-out;
-  }
-  .chevron.rotate {
-    transform: rotate(180deg);
-  }
-
-  .collapsible-content {
-    margin-top: 16px;
-    padding-left: 16px;
-  }
-`;

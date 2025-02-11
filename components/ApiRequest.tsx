@@ -56,9 +56,9 @@ export function ApiRequest({ children }) {
           </select>
           <button className="copy-btn" onClick={copyToClipboard}>
             {copied ? (
-              <CheckCircledIcon width={16} height={16} />
+              <CheckCircledIcon width={16} height={16} color="#5469d4" />
             ) : (
-              <CopyIcon width={16} height={16} />
+              <CopyIcon width={16} height={16} color="#5469d4" />
             )}
           </button>
         </div>
@@ -74,10 +74,10 @@ export function ApiRequest({ children }) {
         .api-request {
           font-family: monospace;
           max-width: 100%;
-          border: 1px solid rgb(216, 222, 228);
+          border: 1px solid var(--border-color-primary);
           border-radius: 8px;
           overflow: hidden;
-          background: #2a2734;
+          background: #1d262f;
           box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
         }
 
@@ -88,8 +88,8 @@ export function ApiRequest({ children }) {
           font-size: 14px;
           font-weight: 600;
           padding: 8px 12px;
-          background: #ebeef1;
-          border-bottom: 1px solid rgb(216, 222, 228);
+          background: var(--background-level2);
+          border-bottom: 1px solid var(--border-color-primary);
         }
 
         .header-controls {
@@ -106,11 +106,12 @@ export function ApiRequest({ children }) {
         .language-selector {
           padding: 4px 8px;
           font-size: 12px;
-          border: 1px solid #ccc;
+          border: 1px solid var(--border-color-primary);
           border-radius: 4px;
           background: #2b3039;
           color: white;
           cursor: pointer;
+          outline: none;
         }
 
         .copy-btn {

@@ -127,15 +127,19 @@ const LeafLink = ({ link, title }: { link: string; title: string }) => {
           border: 0;
           outline: 0;
           background: transparent;
-          color: rgb(89, 97, 113);
+          color: var(--text-color-secondary);
           text-align: start;
           width: 100%;
           cursor: pointer;
         }
 
         .active-leaf-link {
-          color: #5469d4 !important;
-          background: #f0eeff;
+          color: var(--text-color-active) !important;
+          background: var(--background-active);
+        }
+
+        .active-leaf-link:hover {
+          color: var(--text-color-secondary) !important;
         }
       `}</style>
     </button>
@@ -186,7 +190,7 @@ const Accordion = ({
           cursor: pointer;
           font-weight: 500;
           font-size: 14px;
-          color: rgb(89, 97, 113);
+          color: var(--text-color-secondary);
           padding: 6px 8px;
           display: flex;
           align-items: center;
@@ -234,8 +238,8 @@ export function SideNav() {
             top: 0;
             left: 0;
             height: 100svh;
-            border-right: 1px solid #d4d4d4;
-            background: white;
+            background: var(--background-page);
+            border-right: 1px solid var(--border-color-primary);
           }
 
           .sidebar-header {

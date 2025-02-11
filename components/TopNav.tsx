@@ -21,8 +21,8 @@ export function TopNav({ children }) {
             justify-content: space-between;
             gap: 1rem;
             padding: 1rem 2rem;
-            background: white;
-            border-bottom: 1px solid #d4d4d4;
+            background: var(--background-page);
+            border-bottom: 1px solid var(--border-color-primary);
           }
           section {
             display: flex;

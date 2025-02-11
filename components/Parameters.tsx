@@ -92,7 +92,7 @@ const styles = `
 
   .attribute {
     padding: 10px 0;
-    border-top: 1px solid #D8DEE4;
+    border-top: 1px solid var(--border-color-primary);
   }
 
   .schema-title {
@@ -106,21 +106,22 @@ const styles = `
     font-size: 14px;
     font-weight: 700;
   }
+
   .attribute-type {
     font-size: 12px;
-    color: rgb(89, 97, 113);
+    color:var(--text-color-secondary);
   }
+
   .attribute-required {
     font-size: 12px;
     font-weight: 600;
-    color: rgb(177, 54, 0);
+    color: var(--text-color-secondary);
   }
 
   .attribute-description {
     font-size: 14px;
   }
 
-  
 
   .collapsible-trigger {
     display: flex;
