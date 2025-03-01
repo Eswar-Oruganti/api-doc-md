@@ -13,3 +13,4 @@ export * from "./Response";
 export * from "./ApiRequest";
 export * from "./ResponseParameters";
 export * from "./Space";
+export * from "./ValidationResponse";

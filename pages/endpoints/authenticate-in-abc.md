@@ -138,3 +138,55 @@ This method is used to validate the login Id & Password in ABC auth database.
 {% /response %}
 
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "LoginId": "",
+      "ReturMessage": "ABCPassword is required.",
+      "ReturnCode": "",
+      "UDP": "",
+      "CIINumber": "",
+      "CustomerName": "",
+      "CustomerShortName": "",
+      "EmailId": "",
+      "LOBName": "",
+      "LastLoginDateTime": "",
+      "MobileNo": "",
+      "linkedLobs": [],
+      "ResCode": "V2"
+    },
+
+    {
+      "LoginId": "",
+      "ReturMessage": "ABCUserName is required.",
+      "ReturnCode": "",
+      "UDP": "",
+      "CIINumber": "",
+      "CustomerName": "",
+      "CustomerShortName": "",
+      "EmailId": "",
+      "LOBName": "",
+      "LastLoginDateTime": "",
+      "MobileNo": "",
+      "linkedLobs": [],
+      "ResCode": "V1"
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

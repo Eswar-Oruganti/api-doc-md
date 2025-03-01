@@ -111,3 +111,38 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "V1",
+      "ReturnMessage": "Please provide valid CII number."
+    },
+
+    {
+      "ReturnCode": "V3",
+      "ReturnMessage": "Please provide LOB Id."
+    },
+
+    {
+      "ReturnCode": "V5",
+      "ReturnMessage": "Please provide Functionality."
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

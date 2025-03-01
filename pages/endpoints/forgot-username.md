@@ -101,3 +101,33 @@ This method is used to send the ABC login Id to customer’s registered email id
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "13",
+      "ReturnMessage": "Please provide valid CII number"
+    },
+
+    {
+      "ReturnCode": "V5",
+      "ReturnMessage": "Please enter your mobile number or email address."
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

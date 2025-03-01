@@ -83,3 +83,28 @@ This method is used to map one LOB with Another LOB. This mapping will be store 
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "V1",
+      "ReturnMessage": "CII NO or LOB ID is missing"
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

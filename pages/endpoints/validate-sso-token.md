@@ -121,3 +121,32 @@ The purpose of this API is to validate the user token with an active token for t
 
 {% /response %}
 {%/grid %}
+
+{% space  level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "V1",
+      "ReturnMessage": "Please provide Token Reference Number."
+    },
+    {
+      "ReturnCode": "V3",
+      "ReturnMessage": "Please provide Token No."
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

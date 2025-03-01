@@ -159,3 +159,27 @@ This method is used to verify the ABC login Id created for LOB in ABC auth datab
 {% /response %}
 
 {% /grid %}
+
+{% space %}
+{% /space %}
+
+{% grid %}
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "13",
+      "ReturnMessage": "Please provide valid CII number."
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

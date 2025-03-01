@@ -3,6 +3,10 @@
 This method is used to get the new CII for registration which is not available in ABC system.
 
 {% grid %}
+
+{% space level=10 %}
+{% /space %}
+
 {% apirequest %}
 
 ```json
@@ -47,6 +51,7 @@ This method is used to get the new CII for registration which is not available i
 ```
 
 {% /responseparameters %}
+
 {% response %}
 
 ```json

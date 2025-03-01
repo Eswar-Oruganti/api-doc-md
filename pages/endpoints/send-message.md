@@ -145,3 +145,43 @@ This method is used to Send Message to WhatsApp through the GupShup API.
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "4",
+      "ReturnMessage": "Mobile number provided is incorrect"
+    },
+
+    {
+      "ReturnCode": "5",
+      "ReturnMessage": "Method provided is incorrect"
+    },
+
+    {
+      "ReturnCode": "7",
+      "ReturnMessage": "MsgType Provided is incorrect"
+    },
+
+    {
+      "ReturnCode": "8",
+      "ReturnMessage": "Please provide Gupshup UserId and Password"
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

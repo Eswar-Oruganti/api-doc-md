@@ -121,3 +121,37 @@ This method will be using to check whether the requested ABCUserID is already pr
 {% /response %}
 
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "0",
+      "ReturnMessage": "It seems you have not passed ABCUserID. Requesting to please pass ABCUserID",
+      "UserType": null,
+      "CII": null
+    },
+
+    {
+      "ReturnCode": "0",
+      "ReturnMessage": "It seems you have not passed LOB. Requesting to please pass LOB",
+      "UserType": null,
+      "CII": null
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

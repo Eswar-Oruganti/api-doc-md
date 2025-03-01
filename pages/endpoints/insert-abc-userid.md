@@ -100,3 +100,38 @@ This method will be using to insert new login id(OneID/Lob login id) into common
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "0",
+      "ReturnMessage": "Invalid ABCUserID"
+    },
+
+    {
+      "ReturnCode": "0",
+      "ReturnMessage": "Invalid LOB"
+    },
+
+    {
+      "ReturnCode": "0",
+      "ReturnMessage": "Invalid UserType"
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

@@ -98,3 +98,43 @@ This method is used to updatecustomer’s contact details (Mobile number / Email
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "V1",
+      "ReturnMessage": "Please provide valid CII number."
+    },
+
+    {
+      "ReturnCode": "V6",
+      "ReturnMessage": "Invalid email address. Please try again."
+    },
+
+    {
+      "ReturnCode": "V7",
+      "ReturnMessage": "Invalid mobile number. Please try again."
+    },
+
+    {
+      "ReturnCode": "V4",
+      "ReturnMessage": "Please provide at least one LOB."
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

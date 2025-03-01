@@ -46,6 +46,7 @@ export const CustomTable = ({ children, primary }) => {
         td {
           padding: 8px 12px;
           text-align: left;
+          vertical-align: top;
         }
 
         thead {

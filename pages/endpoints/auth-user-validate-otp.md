@@ -106,3 +106,43 @@ This method will be using to Authenticate user OTP who is trying to login with t
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "01",
+      "ReturnMessage": "Invalid ABCUserID"
+    },
+
+    {
+      "ReturnCode": "01",
+      "ReturnMessage": "Invalid Functionality"
+    },
+
+    {
+      "ReturnCode": "01",
+      "ReturnMessage": "Invalid OTP"
+    },
+
+    {
+      "ReturnCode": "01",
+      "ReturnMessage": "Enter valid Source"
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

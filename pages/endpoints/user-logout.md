@@ -84,3 +84,33 @@ This method is used to logged out the user, And to update the Login status flag 
 
 {% /response %}
 {% /grid %}
+
+{% space level=10 %}
+{% /space %}
+
+{% grid %}
+
+{% space %}
+{% /space %}
+
+{% validations %}
+
+```json
+{
+  "validations": [
+    {
+      "ReturnCode": "1",
+      "ReturnMessage": "Invalid User Name."
+    },
+
+    {
+      "ReturnCode": "V1",
+      "ReturnMessage": "Please provide valid user name."
+    }
+  ]
+}
+```
+
+{% /validations %}
+
+{% /grid %}

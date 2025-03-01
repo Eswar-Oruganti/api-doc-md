@@ -9,3 +9,4 @@ export * from "./apirequest.markdoc";
 export * from "./customtable.markdoc";
 export * from "./responseparameters.markdoc";
 export * from "./space.markdoc";
+export * from "./validationresponse";
