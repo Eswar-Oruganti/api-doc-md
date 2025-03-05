@@ -6,7 +6,11 @@ type SchemaProperty = {
   type: string;
   description?: string;
   required?: boolean;
-  properties?: Record<string, SchemaProperty>; // One-level deep handling
+  properties?: Record<string, SchemaProperty>; // For nested objects
+  items?: {
+    type: string;
+    properties?: Record<string, SchemaProperty>; // For arrays of objects
+  };
 };
 
 type Schema = {
@@ -37,19 +41,31 @@ export function Parameters({ children }) {
 function Attribute({ name, schema }: { name: string; schema: SchemaProperty }) {
   const [open, setOpen] = React.useState(false);
 
+  // Check if it's a nested object or an array of objects
+  const isObject = schema.type === "object" && schema.properties;
+  const isArrayOfObjects =
+    schema.type === "array" &&
+    schema.items &&
+    schema.items.type === "object" &&
+    schema.items.properties;
+
   return (
     <div className="attribute">
       <div className="schema-title">
         <h6 className="attribute-name">{name}</h6>
-        <p className="attribute-type">{schema.type ?? "Unknown"}</p>
+        <p className="attribute-type">
+          {schema.type === "array"
+            ? "Array of Objects"
+            : schema.type ?? "Unknown"}
+        </p>
         {schema.required && <p className="attribute-required">Required</p>}
       </div>
       <p className="attribute-description">
         {schema.description ?? "No description provided."}
       </p>
 
-      {/* Object properties inside a collapsible accordion */}
-      {schema.type === "object" && schema.properties && (
+      {/* Handle collapsible for objects & arrays of objects */}
+      {(isObject || isArrayOfObjects) && (
         <Collapsible.Root
           open={open}
           onOpenChange={setOpen}
@@ -58,8 +74,10 @@ function Attribute({ name, schema }: { name: string; schema: SchemaProperty }) {
             Show Child Attributes
             <ChevronDownIcon className={`chevron ${open ? "rotate" : ""}`} />
           </Collapsible.Trigger>
-          <Collapsible.Content className="collapsible-content ">
-            {Object.entries(schema.properties).map(([subKey, subValue]) => (
+          <Collapsible.Content className="collapsible-content">
+            {Object.entries(
+              isObject ? schema.properties! : schema.items!.properties!
+            ).map(([subKey, subValue]) => (
               <div key={subKey} className="attribute">
                 <div className="schema-title">
                   <h6 className="attribute-name">{subKey}</h6>
@@ -109,7 +127,7 @@ const styles = `
 
   .attribute-type {
     font-size: 12px;
-    color:var(--text-color-secondary);
+    color: var(--text-color-secondary);
   }
 
   .attribute-required {
@@ -121,22 +139,23 @@ const styles = `
   .attribute-description {
     font-size: 14px;
   }
-
-
+  .collapsible{
+    margin-top :8px;
+  }
   .collapsible-trigger {
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 14px;
     font-weight: 600;
-    color : #596171
+    color : #596171;
     cursor: pointer;
     background: none;
-    border: 1px solid #D8DEE4 ;
+    border: 1px solid #D8DEE4;
     border-radius : 8px;
     padding : 6px 8px;
-    
   }
+
   .chevron {
     transition: transform 0.2s ease-in-out;
   }

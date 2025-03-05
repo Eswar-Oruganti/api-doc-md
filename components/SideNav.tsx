@@ -105,6 +105,22 @@ export const items = [
         title: "Map LOB Product",
         link: "/endpoints/map-lob-product",
       },
+      {
+        title: "Get LOBWise Product Details ",
+        link: "/endpoints/get-lobwise-productdetails",
+      },
+      {
+        title: "Capture App DeviceType ",
+        link: "/endpoints/capture-app-devicedata",
+      },
+      {
+        title: "Check LoginId For Mobile And Email ",
+        link: "/endpoints/check-loginid-for-mobileandemail",
+      },
+      {
+        title: "ABC Validate LoginID ",
+        link: "/endpoints/abc-validate-loginid",
+      },
     ],
   },
 ];

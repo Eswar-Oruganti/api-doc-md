@@ -87,6 +87,8 @@ This method is used to updatecustomer’s contact details (Mobile number / Email
 ```
 
 {% /responseparameters %}
+
+{% block %}
 {% response %}
 
 ```json
@@ -97,13 +99,6 @@ This method is used to updatecustomer’s contact details (Mobile number / Email
 ```
 
 {% /response %}
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
-
 {% space %}
 {% /space %}
 
@@ -136,5 +131,6 @@ This method is used to updatecustomer’s contact details (Mobile number / Email
 ```
 
 {% /validations %}
+{% /block %}
 
 {% /grid %}

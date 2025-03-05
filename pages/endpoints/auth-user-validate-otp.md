@@ -80,6 +80,10 @@ This method will be using to Authenticate user OTP who is trying to login with t
 
 {% grid %}
 
+{% block %}
+{% /block %}
+
+{% block %}
 {% response %}
 
 ```json
@@ -105,12 +109,6 @@ This method will be using to Authenticate user OTP who is trying to login with t
 ```
 
 {% /response %}
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
 
 {% space %}
 {% /space %}
@@ -144,5 +142,7 @@ This method will be using to Authenticate user OTP who is trying to login with t
 ```
 
 {% /validations %}
+
+{% /block %}
 
 {% /grid %}

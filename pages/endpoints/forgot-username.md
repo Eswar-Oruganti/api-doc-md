@@ -88,6 +88,7 @@ This method is used to send the ABC login Id to customer’s registered email id
 
 {% /responseparameters %}
 
+{% block %}
 {% response %}
 
 ```json
@@ -100,12 +101,6 @@ This method is used to send the ABC login Id to customer’s registered email id
 ```
 
 {% /response %}
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
 
 {% space %}
 {% /space %}
@@ -129,5 +124,7 @@ This method is used to send the ABC login Id to customer’s registered email id
 ```
 
 {% /validations %}
+
+{% /block %}
 
 {% /grid %}

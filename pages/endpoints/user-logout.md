@@ -73,6 +73,9 @@ This method is used to logged out the user, And to update the Login status flag 
 ```
 
 {% /responseparameters %}
+
+{% block %}
+
 {% response %}
 
 ```json
@@ -83,16 +86,8 @@ This method is used to logged out the user, And to update the Login status flag 
 ```
 
 {% /response %}
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
-
 {% space %}
 {% /space %}
-
 {% validations %}
 
 ```json
@@ -112,5 +107,6 @@ This method is used to logged out the user, And to update the Login status flag 
 ```
 
 {% /validations %}
+{% /block %}
 
 {% /grid %}

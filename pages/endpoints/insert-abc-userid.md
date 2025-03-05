@@ -89,6 +89,7 @@ This method will be using to insert new login id(OneID/Lob login id) into common
 
 {% /responseparameters %}
 
+{% block %}
 {% response %}
 
 ```json
@@ -99,12 +100,6 @@ This method will be using to insert new login id(OneID/Lob login id) into common
 ```
 
 {% /response %}
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
 
 {% space %}
 {% /space %}
@@ -133,5 +128,6 @@ This method will be using to insert new login id(OneID/Lob login id) into common
 ```
 
 {% /validations %}
+{% /block %}
 
 {% /grid %}

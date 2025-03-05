@@ -98,6 +98,7 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
 
 {% /responseparameters %}
 
+{% block %}
 {% response %}
 
 ```json
@@ -110,12 +111,6 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
 ```
 
 {% /response %}
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
 
 {% space %}
 {% /space %}
@@ -144,5 +139,6 @@ Purpose of this API is to generate the user token for single sign on (SSO) for A
 ```
 
 {% /validations %}
+{% /block %}
 
 {% /grid %}

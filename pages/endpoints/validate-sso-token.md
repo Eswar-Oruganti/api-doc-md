@@ -99,6 +99,7 @@ The purpose of this API is to validate the user token with an active token for t
 
 {% /responseparameters %}
 
+{% block %}
 {% response %}
 
 ```json
@@ -120,13 +121,6 @@ The purpose of this API is to validate the user token with an active token for t
 ```
 
 {% /response %}
-{%/grid %}
-
-{% space  level=10 %}
-{% /space %}
-
-{% grid %}
-
 {% space %}
 {% /space %}
 
@@ -149,4 +143,6 @@ The purpose of this API is to validate the user token with an active token for t
 
 {% /validations %}
 
-{% /grid %}
+{% /block %}
+
+{%/grid %}

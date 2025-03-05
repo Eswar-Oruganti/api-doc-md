@@ -91,6 +91,8 @@ This method will be using to check whether the requested ABCUserID is already pr
 
 {% /responseparameters %}
 
+{% block %}
+
 {% response %}
 
 ```json
@@ -120,13 +122,6 @@ This method will be using to check whether the requested ABCUserID is already pr
 
 {% /response %}
 
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
-
 {% space %}
 {% /space %}
 
@@ -153,5 +148,7 @@ This method will be using to check whether the requested ABCUserID is already pr
 ```
 
 {% /validations %}
+
+{% /block %}
 
 {% /grid %}

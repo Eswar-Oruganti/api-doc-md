@@ -110,6 +110,8 @@ This method is used to validate the login Id & Password in ABC auth database.
 
 {% /responseparameters %}
 
+{% block %}
+
 {% response %}
 
 ```json
@@ -136,14 +138,6 @@ This method is used to validate the login Id & Password in ABC auth database.
 ```
 
 {% /response %}
-
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
-
 {% space %}
 {% /space %}
 
@@ -188,5 +182,6 @@ This method is used to validate the login Id & Password in ABC auth database.
 ```
 
 {% /validations %}
+{% /block %}
 
 {% /grid %}

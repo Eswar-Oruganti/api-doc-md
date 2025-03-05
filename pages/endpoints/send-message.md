@@ -134,6 +134,8 @@ This method is used to Send Message to WhatsApp through the GupShup API.
 ```
 
 {% /responseparameters %}
+
+{% block %}
 {% response %}
 
 ```json
@@ -144,12 +146,6 @@ This method is used to Send Message to WhatsApp through the GupShup API.
 ```
 
 {% /response %}
-{% /grid %}
-
-{% space level=10 %}
-{% /space %}
-
-{% grid %}
 
 {% space %}
 {% /space %}
@@ -183,5 +179,6 @@ This method is used to Send Message to WhatsApp through the GupShup API.
 ```
 
 {% /validations %}
+{% /block %}
 
 {% /grid %}
